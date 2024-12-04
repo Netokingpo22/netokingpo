@@ -1,1 +1,5 @@
-<IfModule mod_mime.c> AddType application/javascript .js AddType text/css .css </IfModule>
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^netokingpo.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.netokingpo.com$
+RewriteCond %{REQUEST_URI} !dist/
+RewriteRule (.*) /dist/$1 [L]
